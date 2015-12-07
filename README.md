@@ -28,9 +28,10 @@ ng-disabled="custom_condition" 		// Add disable state
 btn-include="'noTemplate.html'"		// Add custom template
 btn-texts="{load:'Load', loading: 'loading...'}" 					// Fast customization for texts
 btn-icons="{load:'fa fa-save', loading: 'fa fa-spinner fa-pulse'}" 	// Fast customization for icons 
+btn-color="'255,255,255'" 			// Customize default spinner color ( '' are mandatory )
 ```
 
-
+ 
 
 ### Custom Templates
 Custom templates give you the oportunity to make your own button loader fast and easy.
