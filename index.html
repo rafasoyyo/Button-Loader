@@ -82,12 +82,12 @@
           <h1>
 <a id="button-loader-directive-for-angular" class="anchor" href="#button-loader-directive-for-angular" aria-hidden="true"><span class="octicon octicon-link"></span></a>Button loader directive for angular</h1>
 
-<p>That is just another directive to manage button loaders, useful for wait times like ajax calls and so. Why create another directive fo this??? because I have not find anyone as simple as I need or as customizable as I want, so I decided to create my own.</p>
+<p>That is just another directive to manage button loaders, useful for waiting times like ajax calls and so. Why create another directive fo this??? Because I have not find anyone as simple as I need or as customizable as I want, so I decided to create my own.</p>
 
 <h3>
 <a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it</h3>
 
-<p>Just like any other angular directive, just include the ```btnLoader´´´ dependency on your Angular module:</p>
+<p>Just like any other angular directive, include the "btnLoader" dependency on your Angular module:</p>
 
 <pre><code>var myapp = angular.module('MyApp', ['btnLoader'])
 </code></pre>
@@ -100,7 +100,7 @@
 <h3>
 <a id="configuration-options" class="anchor" href="#configuration-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration options</h3>
 
-<p>The button loader is fully configurable fron html attributes. Below you can see the list of configurable options:</p>
+<p>The button loader is fully configurable from html attributes. Below you can see the list of configurable options:</p>
 
 <pre><code>btn-loader                          // Required to include the directive
 btn-condition="custom_condition"    // Set the variable to change state
@@ -114,8 +114,8 @@ btn-icons="{load:'fa fa-save', loading: 'fa fa-spinner fa-pulse'}"  // Fast cust
 <h3>
 <a id="custom-templates" class="anchor" href="#custom-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom Templates</h3>
 
-<p>Custom templates give you the oportunity to make your own button loader fast and easy.
-Create a template with both states and wrap them into tags with "ng-hide" and "ng-show" like this: </p>
+<p>Custom templates give you the oportunity to make your own button-loader fast and easily.
+Create a template with both states and wrap them into tags with "ng-hide='active'" and "ng-show='active'" like this: </p>
 
 <pre><code>&lt;span ng-hide="active"&gt;
     &lt;span&gt;My custom text&lt;/span&gt;
@@ -129,7 +129,7 @@ Create a template with both states and wrap them into tags with "ng-hide" and "n
 
 
 <h3>
-<a id="Examples-templates" class="anchor" href="#examples-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples Templates</h3>
+<a id="Examples-templates" class="anchor" href="#examples-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h3>
 
   <div ng-app="example_app">
     <div ng-controller="example_Ctrl">
@@ -144,11 +144,11 @@ Create a template with both states and wrap them into tags with "ng-hide" and "n
       <div style="margin:15px"></div>
 
       <span>Bootstrap style button: </span>
-      <button class="btn btn-primary" btn-loader btn-condition="cond1" btn-color="'255,255,255'"></button>
+      <button class="btn btn-primary" btn-loader btn-condition="cond1" btn-texts="{load:'Send', loading: 'Sending'}" btn-color="'255,255,255'"></button>
       <button class="btn btn-default" ng-click="cond1 = false">Stop spinner</button>
       <div style="margin:5px"></div>
       <pre><code>code:
-        &lt;button class="btn btn-primary" btn-loader btn-condition="cond1" btn-color="'255,255,255'"&gt&lt;/button&gt; 
+        &lt;button class="btn btn-primary" btn-loader btn-condition="cond1" btn-texts="{load:'Send', loading: 'Sending'}" btn-color="'255,255,255'"&gt&lt;/button&gt; 
         &lt;button class="btn btn-primary" ng-click="cond1 = false"&gtStop spinner&lt;/button&gt; </code></pre>
 
       <div style="margin:15px"></div>
