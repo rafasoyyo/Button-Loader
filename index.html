@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="/dist/btn-loader-directive-min.js"></script>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,7 +20,7 @@
     <title>Button-loader by rafasoyyo</title>
   </head>
 
-  <body>
+  <body style="padding-bottom:60px;">
     <header>
       <div class="inner">
         <h1>Button-loader</h1>
@@ -81,10 +82,19 @@ Create a template with both states and wrap them into tags with "ng-hide" and "n
 
 
 <h3>
-<a id="examples-templates" class="anchor" href="#examples-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>examples Templates</h3>
+<a id="Examples-templates" class="anchor" href="#examples-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples Templates</h3>
 
-  <button class="btn btn-primary">Example</button>
-
+  <div ng-app="example_app">
+    <div ng-controller="example_Ctrl">
+      <span>Default button</span>
+      <button btn-loader btn-condition="cond1"></button>
+      <button ng-click="cond1 = false">Stop spinner</button>
+      <div></div>
+      <span>Bootstrap Style button</span>
+      <button class="btn btn-primary" btn-loader btn-condition="cond1"></button>
+      <button class="btn btn-default" ng-click="cond1 = false">Stop spinner</button>
+    </div>
+  </div>
         </section>
 
         <aside id="sidebar">
@@ -104,6 +114,24 @@ Create a template with both states and wrap them into tags with "ng-hide" and "n
       </div>
     </div>
 
-  
+  <script>
+
+
+  var myapp = angular.module('example_app', ['btnLoader'])
+
+  myapp.controller('example_Ctrl',['$scope', '$timeout', function($scope, $timeout){
+
+    $scope.submit = function(){
+      console.log('submited')
+    }
+
+    $scope.setTrue = function(){
+      $scope.condition2 = false;
+    };
+
+  }]);
+
+
+</script>
   </body>
 </html>
