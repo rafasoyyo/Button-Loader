@@ -9,7 +9,7 @@
 	<script src="../dist/btn-loader-directive-min.js"></script>
 
 	<style>
-	div{
+	body > div{
 		display: block;
 		margin: 10px;
 		}
@@ -23,13 +23,11 @@
 		
 		<div></div>
 		
-		<button btn-loader btn-condition="condition1" btn-keepsize="true"
-		 ng-disabled="condition1"></button>
+		<button btn-loader btn-condition="condition1" btn-keepsize="true" ng-disabled="condition1"></button>
 		
 		<div></div>
 
-		<button btn-loader btn-condition="condition2" btn-icons="{load:'fa fa-save', loading: 'fa fa-spinner fa-pulse'}"
-		 ng-disabled="condition2" btn-include="'noTemplate.html'">
+		<button btn-loader btn-condition="condition2" ng-disabled="condition2" btn-include="'noTemplate.html'">
 			
 		</button>
 
