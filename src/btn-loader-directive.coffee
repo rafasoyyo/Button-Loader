@@ -35,7 +35,7 @@ angular
                                       -o-animation: rotation 1s infinite linear; animation: rotation 1s infinite linear;
                                       border: 2px solid; border-radius: 100%; margin: 0 0 0 5px;}
                                     .btn-loading-icon:before {
-                                      content: ""; display: block; position: absolute; left: 0px; top: -2px; height: 100%; width: 100%;
+                                      content: ""; display: block; position: absolute; left: -2px; top: -2px; height: 100%; width: 100%;
                                       border-top: 2px solid; border-left: 2px solid transparent;
                                       border-bottom: 2px solid transparent; border-right: 2px solid transparent; border-radius: 100%; } 
                                     @-webkit-keyframes rotation {
