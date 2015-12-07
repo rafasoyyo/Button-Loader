@@ -13,8 +13,9 @@ angular
                             btnTexts    : "=btnTexts"
                             btnIcons    : "=btnIcons"
                             btnInclude  : "=btnInclude"
+                            btnColor    : "=btnColor"
                         
-                template: (element, attrs) ->
+                template: (element, attrs) -> 
                     
                     if attrs.btnInclude 
                         return '<span ng-include="btnInclude"></span>'
@@ -29,13 +30,13 @@ angular
                                     .btn-loading-span{
                                         display:inline-block; vertical-align:middle; position:relative;}
                                     .btn-loading-icon {
-                                      height: 11px; width: 11px; position: relative; display:inline-block; vertical-align:middle;
+                                      height: 15px; width: 15px; position: relative; display:inline-block; vertical-align:middle;
                                       -webkit-animation: rotation 1s infinite linear; -moz-animation: rotation 1s infinite linear;
                                       -o-animation: rotation 1s infinite linear; animation: rotation 1s infinite linear;
-                                      border: 2px solid rgba(0, 0, 0, 0.2); border-radius: 100%; margin: 0 0 0 5px;}
+                                      border: 2px solid; border-radius: 100%; margin: 0 0 0 5px;}
                                     .btn-loading-icon:before {
-                                      content: ""; display: block; position: absolute; left: -2px; top: -2px; height: 100%; width: 100%;
-                                      border-top: 2px solid rgba(0, 0, 0, 0.8); border-left: 2px solid transparent;
+                                      content: ""; display: block; position: absolute; left: 0px; top: -2px; height: 100%; width: 100%;
+                                      border-top: 2px solid; border-left: 2px solid transparent;
                                       border-bottom: 2px solid transparent; border-right: 2px solid transparent; border-radius: 100%; } 
                                     @-webkit-keyframes rotation {
                                       from { -webkit-transform: rotate(0deg);   }
@@ -52,12 +53,12 @@ angular
                                 </style>
 
                                 <span class="btn-load-span" ng-hide="active">
-                                    <i ng-if="{{btnIcons.load}}" class="btn-load-icon {{btnIcons.load}}"></i>
+                                    <i ng-if="btnIcons.load" class="btn-load-icon {{btnIcons.load}}"></i>
                                     {{ btnTexts.load || "Save" }}
                                 </span>
                                 <span class="btn-loading-span" ng-show="active">
                                     {{ btnTexts.loading || "Saving" }}
-                                    <i class="{{btnIcons.loading || \'btn-loading-icon\' }}"></i>
+                                    <i class="{{btnIcons.loading || \'btn-loading-icon\' }}" style="border-color:rgba({{btnColor || '0,0,0'}} , .3)"></i>
                                 </span>
                                 <input type="submit" style="display:none">
                                 """
