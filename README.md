@@ -2,6 +2,9 @@
 
 That is just another directive to manage button loaders, useful for wait times like ajax calls and so. Why create another directive fo this??? because I have not find anyone as simple as I need or as customizable as I want, so I decided to create my own.
 
+<a href="http://rafasoyyo.github.io/Button-Loader/"> See it in action </a>
+
+
 ### How to use it
 
 Just like any other angular directive, just include the ```btnLoader´´´ dependency on your Angular module:
