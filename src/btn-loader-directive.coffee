@@ -52,7 +52,7 @@ angular
                                 </style>
 
                                 <span class="btn-load-span" ng-hide="active">
-                                    <i class="btn-load-icon {{btnIcons.load}}"></i>
+                                    <i ng-if="{{btnIcons.load}}" class="btn-load-icon {{btnIcons.load}}"></i>
                                     {{ btnTexts.load || "Save" }}
                                 </span>
                                 <span class="btn-loading-span" ng-show="active">
