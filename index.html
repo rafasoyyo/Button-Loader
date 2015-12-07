@@ -86,13 +86,90 @@ Create a template with both states and wrap them into tags with "ng-hide" and "n
 
   <div ng-app="example_app">
     <div ng-controller="example_Ctrl">
-      <span>Default button</span>
-      <button btn-loader btn-condition="cond1"></button>
-      <button ng-click="cond1 = false">Stop spinner</button>
-      <div></div>
-      <span>Bootstrap Style button</span>
-      <button class="btn btn-primary" btn-loader btn-condition="cond1"></button>
+      <span>Default button: </span>
+      <button btn-loader btn-condition="cond0"></button>
+      <button ng-click="cond0 = false">Stop spinner</button>
+      <div style="margin:5px"></div>
+      <pre><code>code:
+        &lt;button btn-loader btn-condition="cond0"&gt&lt;/button&gt; 
+        &lt;button ng-click="cond0 = false"&gtStop spinner&lt;/button&gt; </code></pre>
+
+      <div style="margin:15px"></div>
+
+      <span>Bootstrap style button: </span>
+      <button class="btn btn-primary" btn-loader btn-condition="cond1" btn-color="'255,255,255'"></button>
       <button class="btn btn-default" ng-click="cond1 = false">Stop spinner</button>
+      <div style="margin:5px"></div>
+      <pre><code>code:
+        &lt;button class="btn btn-primary" btn-loader btn-condition="cond1" btn-color="'255,255,255'"&gt&lt;/button&gt; 
+        &lt;button class="btn btn-primary" ng-click="cond1 = false"&gtStop spinner&lt;/button&gt; </code></pre>
+
+      <div style="margin:15px"></div>
+
+      <span>Custom template: </span>
+      <button class="btn btn-primary" btn-loader btn-condition="cond2" btn-include="'example/custom_template.html'"></button>
+      <button class="btn btn-default" ng-click="cond2 = false">Stop spinner</button>
+      <div style="margin:5px"></div>
+      <pre><code>code:
+        &lt;button class="btn btn-primary" btn-loader btn-condition="cond2" btn-include="'example/custom_template.html'"&gt&lt;/button&gt; 
+        &lt;button class="btn btn-primary" ng-click="cond2 = false"&gtStop spinner&lt;/button&gt; 
+
+        Template:
+          &lt;style&gt; 
+            .spinner {
+              width: 100%;
+              text-align: center;
+            }
+            .spinner.gray > div {
+              background-color: #808080;
+            }
+            .spinner > div {
+              width: 12px;
+              height: 12px;
+              background-color: white;
+              border-radius: 100%;
+              display: inline-block;
+              -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+              animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+            }
+            .spinner .bounce1 {
+              -webkit-animation-delay: -0.32s;
+              animation-delay: -0.32s;
+            }
+            .spinner .bounce2 {
+              -webkit-animation-delay: -0.16s;
+              animation-delay: -0.16s;
+            }
+            @-webkit-keyframes sk-bouncedelay {
+              0%, 80%, 100% {
+                -webkit-transform: scale(0);
+              }
+              40% {
+                -webkit-transform: scale(1);
+              }
+            }
+            @keyframes sk-bouncedelay {
+              0%, 80%, 100% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+              }
+              40% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+              }
+            }
+          &lt;/style&gt; 
+
+
+          &lt;div ng-show="active" class="spinner"&gt; 
+            &lt;div class="bounce1"&gt; &lt;/div&gt; 
+            &lt;div class="bounce2"&gt; &lt;/div&gt; 
+            &lt;div class="bounce3"&gt; &lt;/div&gt; 
+          &lt;/div>
+          &lt;span ng-hide="active" ng-bind="'SAVE'">&lt;/span&gt; 
+          &lt;input type="submit" style="display:none"/&gt; 
+        </code></pre>
+
     </div>
   </div>
         </section>
@@ -115,23 +192,9 @@ Create a template with both states and wrap them into tags with "ng-hide" and "n
     </div>
 
   <script>
-
-
-  var myapp = angular.module('example_app', ['btnLoader'])
-
-  myapp.controller('example_Ctrl',['$scope', '$timeout', function($scope, $timeout){
-
-    $scope.submit = function(){
-      console.log('submited')
-    }
-
-    $scope.setTrue = function(){
-      $scope.condition2 = false;
-    };
-
-  }]);
-
-
-</script>
+    var myapp = angular.module('example_app', ['btnLoader'])
+    myapp.controller('example_Ctrl',['$scope', function($scope){}]);
+  </script>
+  
   </body>
 </html>
