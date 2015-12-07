@@ -15,7 +15,7 @@ var myapp = angular.module('MyApp', ['btnLoader'])
 
 And then use the html attribute 
 ```
-<button btn-loader  btn-condition="custom_condition" >BUTTON </button>
+<button btn-loader btn-condition="custom_condition">BUTTON</button>
 ```
 
 
