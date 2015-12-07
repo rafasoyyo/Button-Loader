@@ -12,7 +12,7 @@
     <title>Button-loader by rafasoyyo</title>
 
 
-    <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <style>
       .btn{
         display: inline-block;
@@ -35,8 +35,6 @@
         border: 1px solid transparent;
         border-radius: 4px;
       }
-
-
       .btn-primary {
         color: #fff;
         background-color: #337ab7;
@@ -47,8 +45,6 @@
         background-color: #286090;
         border-color: #204d74;
       }
-
-
       .btn-default {
         color: #333;
         background-color: #fff;
@@ -154,9 +150,19 @@ Create a template with both states and wrap them into tags with "ng-hide='active
 
       <div style="margin:15px"></div>
 
-      <span>Custom template: </span>
-      <button class="btn btn-primary" btn-loader btn-condition="cond2" btn-include="'custom_template.html'"></button>
+      <span>FontAwesome style button: </span>
+      <button class="btn btn-primary" btn-loader btn-condition="cond2" btn-texts="{load:'Send', loading: 'Sending'}" btn-icons="{load:'fa fa-save', loading:'fa fa-spinner fa-pulse'}"></button>
       <button class="btn btn-default" ng-click="cond2 = false">Stop spinner</button>
+      <div style="margin:5px"></div>
+      <pre><code>code:
+        &lt;button class="btn btn-primary" btn-loader btn-condition="cond1" btn-texts="{load:'Send', loading: 'Sending'}" btn-icons="{load:'fa fa-save', loading:'fa fa-spinner fa-pulse'}"&gt&lt;/button&gt; 
+        &lt;button class="btn btn-primary" ng-click="cond1 = false"&gtStop spinner&lt;/button&gt; </code></pre>
+
+      <div style="margin:15px"></div>
+
+      <span>Custom template: </span>
+      <button class="btn btn-primary" btn-loader btn-condition="cond3" btn-include="'custom_template.html'"></button>
+      <button class="btn btn-default" ng-click="cond3 = false">Stop spinner</button>
       <div style="margin:5px"></div>
       <pre><code>code:
         &lt;button class="btn btn-primary" btn-loader btn-condition="cond2" btn-include="'example/custom_template.html'"&gt&lt;/button&gt; 
