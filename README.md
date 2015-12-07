@@ -1,13 +1,13 @@
 # Button loader directive for angular
 
-That is just another directive to manage button loaders, useful for wait times like ajax calls and so. Why create another directive fo this??? because I have not find anyone as simple as I need or as customizable as I want, so I decided to create my own.
+That is just another directive to manage button loaders, useful for waiting times like ajax calls and so. Why create another directive fo this??? Because I have not find anyone as simple as I need or as customizable as I want, so I decided to create my own.
 
 <a href="http://rafasoyyo.github.io/Button-Loader/"> See it in action </a>
 
 
 ### How to use it
 
-Just like any other angular directive, just include the ```btnLoader´´´ dependency on your Angular module:
+Just like any other angular directive, include the "btnLoader" dependency on your Angular module:
 ```
 var myapp = angular.module('MyApp', ['btnLoader'])
 ```
@@ -21,7 +21,7 @@ And then use the html attribute
 
 ### Configuration options
 
-The button loader is fully configurable fron html attributes. Below you can see the list of configurable options:
+The button loader is fully configurable from html attributes. Below you can see the list of configurable options:
 
 ```
 btn-loader  						// Required to include the directive
@@ -37,8 +37,8 @@ btn-color="'255,255,255'" 			// Customize default spinner color ( '' are mandato
 
 
 ### Custom Templates
-Custom templates give you the oportunity to make your own button loader fast and easy.
-Create a template with both states and wrap them into tags with "ng-hide" and "ng-show" like this: 
+Custom templates give you the oportunity to make your own button-loader fast and easily.
+Create a template with both states and wrap them into tags with "ng-hide="active"" and "ng-show="active"" like this: 
 
 ```
 <span ng-hide="active">
