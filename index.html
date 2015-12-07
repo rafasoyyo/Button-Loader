@@ -167,12 +167,14 @@ Create a template with both states and wrap them into tags with "ng-hide='active
 
       <div style="margin:15px"></div>
 
-      <span>Custom template: </span>
+      <span>Custom template: </span> 
       <button class="btn btn-primary" btn-loader btn-condition="cond3" btn-keepsize="true" btn-include="'custom_template.html'"></button>
+      <button class="btn btn-primary" btn-loader btn-condition="cond3" btn-include="'custom_template.html'"></button>     
       <button class="btn btn-default" ng-click="cond3 = false">Stop spinner</button>
       <div style="margin:5px"></div>
       <pre><code>code:
         &lt;button class="btn btn-primary" btn-loader btn-condition="cond2" btn-keepsize="true" btn-include="'example/custom_template.html'"&gt&lt;/button&gt; 
+        &lt;button class="btn btn-primary" btn-loader btn-condition="cond2" btn-include="'example/custom_template.html'"&gt&lt;/button&gt; 
         &lt;button class="btn btn-primary" ng-click="cond2 = false"&gtStop spinner&lt;/button&gt; 
 
 Template:
