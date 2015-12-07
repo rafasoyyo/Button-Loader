@@ -24,25 +24,26 @@ angular.module('btnLoader', []).directive('btnLoader', ["$timeout", function($ti
     link: function($scope, element, attrs) {
       $scope.btnCondition = false;
       element.bind('click', function() {
-        var e;
-        if (attrs.btnKeepsize) {
-          e = element[0];
-          element.css({
-            'width': e.offsetWidth + 'px',
-            'height': e.offsetHeight + 'px'
-          });
-        }
         return $timeout(function() {
           return $scope.btnCondition = true;
         }, 1);
       });
       return $scope.$watch('btnCondition', function(val, old) {
-        if (!val && attrs.btnKeepsize) {
-          element.css({
-            background: '',
-            width: '',
-            height: ''
-          });
+        var e;
+        if (attrs.btnKeepsize) {
+          e = element[0];
+          if (val) {
+            element.css({
+              'width': e.offsetWidth + 'px',
+              'height': e.offsetHeight + 'px'
+            });
+          } else {
+            element.css({
+              background: '',
+              width: '',
+              height: ''
+            });
+          }
         }
         return $scope.active = val ? true : false;
       });

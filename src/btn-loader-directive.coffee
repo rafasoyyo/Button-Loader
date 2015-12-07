@@ -68,15 +68,15 @@ angular
                     $scope.btnCondition = false
 
                     element.bind 'click', ->
-                        if attrs.btnKeepsize
-                            e = element[0]
-                            element.css({'width': e.offsetWidth + 'px', 'height': e.offsetHeight + 'px'})
                         
                         $timeout( ->
                             $scope.btnCondition = true
                         ,1)
 
                     $scope.$watch 'btnCondition', (val, old) ->
-                        if not val and attrs.btnKeepsize then element.css({background: '', width: '', height: ''})
+                        if attrs.btnKeepsize
+                          e = element[0]
+                          if val then element.css({'width': e.offsetWidth + 'px', 'height': e.offsetHeight + 'px'})
+                          else  element.css({background: '', width: '', height: ''})
                         $scope.active = if val then true else false
                 }
