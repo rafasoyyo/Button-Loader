@@ -8,6 +8,7 @@
     "gulp-minify": "*",
     "gulp-coffee": "*",
     "gulp-notify": "*",
-    "gulp-livereload": "*"
+    "gulp-livereload": "*",
+    "gulp-ng-annotate" : "*"
   }
 }

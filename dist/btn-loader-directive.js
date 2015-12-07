@@ -15,7 +15,7 @@ attrs:
               loading: 'loading...'   
   }
  */
-angular.module('btnLoader', []).directive('btnLoader', function($timeout) {
+angular.module('btnLoader', []).directive('btnLoader', ["$timeout", function($timeout) {
   return {
     restrict: 'A',
     scope: {
@@ -60,4 +60,4 @@ angular.module('btnLoader', []).directive('btnLoader', function($timeout) {
       });
     }
   };
-});
+}]);
