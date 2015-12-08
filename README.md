@@ -35,14 +35,11 @@ btn-color="'255,255,255'" 			// Customize default spinner color ( '' are mandato
 ```
 
 ### Event
-If condition doesn't work before of the scopes issues you can forze it with an event passing the parameter bool (dafault false)
+If condition doesn't work before of the scopes issues you can forze it with an event passing the parameter "bool" (dafault false)
 ```
-$scope.$on('btn-loader', bool) 
+$scope.$broadcast('btn-loader', bool) 
 ```
-or
-```
-$scope.$on('btn-loader', bool) 
-```
+
 
 ### Custom Templates
 Custom templates give you the oportunity to make your own button-loader fast and easily.
