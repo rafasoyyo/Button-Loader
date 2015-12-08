@@ -3,6 +3,7 @@
     @author Rafael Hernández Navarro - twitter: @rafa_soyyo
     @version 1.0.0
 ###
+
 angular
     .module('btnLoader', [])
     .directive 'btnLoader', ($timeout) ->
@@ -63,20 +64,20 @@ angular
                                 <input type="submit" style="display:none">
                                 """
 
-                link: ($scope, element, attrs) ->                   
+                link: ($scope, elem, attrs) ->                   
                     
                     $scope.btnCondition = false
 
-                    element.bind 'click', ->
-                        
+                    elem.bind 'click', ->                        
                         $timeout( ->
                             $scope.btnCondition = true
                         ,1)
 
+                    $scope.$on 'btn-loader', (bool, data=false)->  $scope.btnCondition = data
+                    
                     $scope.$watch 'btnCondition', (val, old) ->
                         if attrs.btnKeepsize
-                          e = element[0]
-                          if val then element.css({'width': e.offsetWidth + 'px', 'height': e.offsetHeight + 'px'})
-                          else  element.css({background: '', width: '', height: ''})
+                            if val then elem.css({width: elem.prop('offsetWidth')+'px', height: elem.prop('offsetHeight')+'px'})
+                            else        elem.css({width: '', height: ''})
                         $scope.active = if val then true else false
                 }
