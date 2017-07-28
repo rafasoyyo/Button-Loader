@@ -1,7 +1,7 @@
 {
   "name": "btn-loader",
   "private": false,
-  "version": 0.0.1,
+  "version": "0.0.1",
   "dependencies": {
     "gulp": "*",
     "gulp-util": "*",
